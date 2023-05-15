@@ -1,0 +1,33 @@
+.container {
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(204, 217, 228);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+h1 {
+    margin-bottom: 10px;
+}
+
+input {
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+}
+
+button {
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
+}
