@@ -11,46 +11,21 @@ let inputDuracao = document.getElementById("duracao")
 
 let resultado = document.getElementById("resultado")
 
+const carnePorPessoa = duracao => duracao >= 6 ? 650 : 400;
+const cervejaPorPessoa = duracao => duracao >= 6 ? 2000 : 1200;
+const bebidasPorPessoa = duracao => duracao >= 6 ? 1500 : 100;
+
 function calcular() {
+  const adultos = inputAdultos.value;
+  const criancas = inputCriancas.value;
+  const duracao = inputDuracao.value;
 
-    let adultos = inputAdultos.value
-    let criancas = inputCriancas.value
-    let duracao = inputDuracao.value
+  const quantidadeTotalCarne = carnePorPessoa(duracao) * adultos + (carnePorPessoa(duracao) / 2 * criancas);
+  const quantidadeTotalCerveja = cervejaPorPessoa(duracao) * adultos;
+  const quantidadeTotalBebidas = bebidasPorPessoa(duracao) * adultos + (bebidasPorPessoa(duracao) / 2 * criancas);
 
-    let quantidadeTotalCarne = carnePorPessoa(duracao) * adultos + (carnePorPessoa(duracao) / 2 * criancas)
-
-    let quantidadeTotalCerveja = cervejaPorPessoa(duracao) * adultos 
-
-    let quantidadeTotalBebidas = bebidasPorPessoa(duracao) * adultos + (bebidasPorPessoa(duracao) / 2 * criancas)
-
-
-    resultado.innerHTML = `<p>${quantidadeTotalCarne / 1000} Kg de Carne</p>`
-    resultado.innerHTML += `<p>${Math.ceil(quantidadeTotalCerveja / 355)} Latas de Cerveja</p>`
-    resultado.innerHTML += `<p>${Math.ceil(quantidadeTotalBebidas / 2000)} Pet's 2L de Bebidas</p>`
+  resultado.innerHTML = `<p>${quantidadeTotalCarne / 1000} Kg de Carne</p>`;
+  resultado.innerHTML += `<p>${Math.ceil(quantidadeTotalCerveja / 355)} Latas de Cerveja</p>`;
+  resultado.innerHTML += `<p>${Math.ceil(quantidadeTotalBebidas / 2000)} Pet's 2L de Bebidas</p>`;
 }
-
-function carnePorPessoa(duracao){
-    if(duracao >= 6){
-        return 650
-    }else{
-        return 400
-    }
-}
-
-function cervejaPorPessoa(duracao){
-    if(duracao >= 6){
-        return 2000
-    }else{
-        return 1200
-    }
-}
-
-function bebidasPorPessoa(duracao){
-    if(duracao >= 6){
-        return 1500
-    }else{
-        return 100
-    }
-}
-
 
