@@ -4,7 +4,7 @@
 
 // Crianças valem por 0,5
 
-
+let botaoCalcular = document.getElementById("btn")
 let inputAdultos = document.getElementById("adultos")
 let inputCriancas = document.getElementById("criancas")
 let inputDuracao = document.getElementById("duracao")
@@ -25,7 +25,13 @@ function calcular() {
   const quantidadeTotalBebidas = bebidasPorPessoa(duracao) * adultos + (bebidasPorPessoa(duracao) / 2 * criancas);
 
   resultado.innerHTML = `<p>${quantidadeTotalCarne / 1000} Kg de Carne</p>`;
+
   resultado.innerHTML += `<p>${Math.ceil(quantidadeTotalCerveja / 355)} Latas de Cerveja</p>`;
+
   resultado.innerHTML += `<p>${Math.ceil(quantidadeTotalBebidas / 2000)} Pet's 2L de Bebidas</p>`;
 }
+
+botaoCalcular.addEventListener('click', function(){
+    calcular()
+})
 
