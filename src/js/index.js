@@ -31,7 +31,7 @@ function calcular() {
   resultado.innerHTML += `<p>${Math.ceil(quantidadeTotalBebidas / 2000)} Pet's 2L de Bebidas</p>`;
 }
 
-botaoCalcular.addEventListener('click', function(){
-    calcular()
-})
+botaoCalcular.addEventListener('click', () => {
+    calcular();
+});
 
