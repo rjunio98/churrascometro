@@ -4,12 +4,12 @@
 
 // Crianças valem por 0,5
 
-let botaoCalcular = document.getElementById("btn")
-let inputAdultos = document.getElementById("adultos")
-let inputCriancas = document.getElementById("criancas")
-let inputDuracao = document.getElementById("duracao")
+const botaoCalcular = document.getElementById("btn")
+const inputAdultos = document.getElementById("adultos")
+const inputCriancas = document.getElementById("criancas")
+const inputDuracao = document.getElementById("duracao")
 
-let resultado = document.getElementById("resultado")
+const resultado = document.getElementById("resultado")
 
 const carnePorPessoa = duracao => duracao >= 6 ? 650 : 400;
 const cervejaPorPessoa = duracao => duracao >= 6 ? 2000 : 1200;
@@ -32,6 +32,6 @@ function calcular() {
 }
 
 botaoCalcular.addEventListener('click', () => {
-    calcular();
+  calcular();
 });
 
